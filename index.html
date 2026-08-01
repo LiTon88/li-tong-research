@@ -11,26 +11,50 @@
 <main>
   <section class="publication-hero" id="top">
     <div class="container title-container">
-      <h1>Planning for <span class="title-blue">Dynamic</span> <span class="title-orange">Aerial Grasping</span> Based on Discrete Variational Mechanics and Complementarity Constraints</h1>
+      <!-- <h1>Planning for <span class="title-blue">Dynamic</span> <span class="title-orange">Aerial Grasping</span> Based on Discrete Variational Mechanics and Complementarity Constraints</h1> -->
+      <h1>Manifold-Aware Spatio-Temporal Planning for Aerial Pick-and-Place via a Discrete Right-Trivialized Hamiltonian Dynamics</h1>
     </div>
-    <div class="hero-banner" aria-label="Illustration of aerial manipulators following planned trajectories">
-      <div class="banner-skyline"></div><div class="banner-path path-a"></div><div class="banner-path path-b"></div>
-      <div class="aerial-robot robot-one"><i class="rotor left"></i><i class="rotor right"></i><span class="body"></span><span class="arm-link link-one"></span><span class="arm-link link-two"></span><b class="gripper"></b></div>
-      <div class="aerial-robot robot-two"><i class="rotor left"></i><i class="rotor right"></i><span class="body"></span><span class="arm-link link-one"></span><span class="arm-link link-two"></span><b class="gripper"></b></div>
-      <div class="aerial-robot robot-three"><i class="rotor left"></i><i class="rotor right"></i><span class="body"></span><span class="arm-link link-one"></span><span class="arm-link link-two"></span><b class="gripper"></b></div>
-      <div class="aerial-robot robot-four"><i class="rotor left"></i><i class="rotor right"></i><span class="body"></span><span class="arm-link link-one"></span><span class="arm-link link-two"></span><b class="gripper"></b></div>
-      <div class="banner-object object-one">PICK</div><div class="banner-object object-two">PLACE</div>
-      <p>SPATIO-TEMPORAL PLANNING · CONTACT-AWARE MOTION · AERIAL MANIPULATION</p>
+    <div class="hero-banner">
+      <img class="hero-image" src="assets/logistics.svg" alt="Aerial manipulation logistics experiment">
     </div>
     <div class="container publication-info">
-      <div class="authors"><a href="https://github.com/LiTon88">Li Tong</a><sup>1,2</sup><span class="author-placeholder">Collaborators to be added</span></div>
-      <div class="affiliations"><span><sup>1</sup> Tongji University</span><span><sup>2</sup> Technical University of Munich</span></div>
+      <div class="authors">
+        <span class="author"><a href="mailto:tong_li@tongji.edu.cn">Tong Li</a><sup>1</sup></span>
+        <span class="author">Yuanzhe Cui<sup>1</sup></span>
+        <span class="author">Lingchong Gao<sup>1,2</sup></span>
+        <span class="author">Johannes Fottner<sup>2</sup></span>
+        <span class="author">and <a href="mailto:qirong.tang@outlook.com">Qirong Tang</a><sup>1,3,*</sup></span>
+      </div>
+      <div class="affiliations">
+        <span><sup>1</sup> Laboratory of Robotics and Multibody System, School of Mechanical Engineering, Tongji University, Shanghai, China.</span>
+        <span><sup>2</sup> Chair of Materials Handling, Material Flow, Logistics, School of Engineering and Design, Technical University of Munich, Munich, Germany.</span>
+        <span><sup>3</sup> Shanghai Institute of Aircraft Mechanics and Control, School of Aerospace Engineering and Applied Mechanics, Tongji University, Shanghai, China.</span>
+      </div>
       <p class="project-status">Research Project · 2026</p>
       <div class="resource-links"><span class="resource-button unavailable"><span class="resource-icon">▤</span> Paper</span><a class="resource-button" href="https://github.com/LiTon88/li-tong-research"><span class="resource-icon">⌘</span> Code</a><span class="resource-button unavailable"><span class="resource-icon">▶</span> Video</span></div>
     </div>
   </section>
 
-  <section class="section abstract-section" id="abstract"><div class="container narrow"><h2>Abstract</h2><div class="content justified"><p>Dynamic aerial grasping requires simultaneous reasoning about nonlinear flight dynamics, manipulator motion, contact events, and task timing. We formulate these coupled decisions in a unified spatio-temporal trajectory optimization problem. Discrete variational mechanics is employed to preserve the mechanical structure of the aerial manipulator, while relaxed complementarity constraints describe grasp events and task progress in a differentiable form. The resulting planner jointly optimizes system states, control inputs, event progress, and motion duration. The framework is integrated with closed-loop control and experimentally evaluated through pick-and-place operations on a 3-DOF aerial manipulator.</p></div></div></section>
+  <section class="section abstract-section" id="abstract"><div class="container narrow"><h2>Abstract</h2><div class="content justified"><p>Continuous aerial pick-and-place requires whole-body planning across
+ordered grasping and placement events while respecting the
+non-Euclidean configuration manifold of the aerial manipulator. This
+paper presents a manifold-aware spatio-temporal planning framework based
+on discrete right-trivialized Hamiltonian dynamics. A discrete
+Hamiltonian variational formulation on
+<span class="math" role="math" aria-label="S E 3 times R to the power n"><span class="mathrm">SE(3) &times </span> ℝ<sup>n</sup></span> provides a manifold-consistent
+dynamics transcription, while continuous task-progress variables and
+relaxed event-complementarity constraints encode multiple ordered events
+without integer variables or predefined event nodes. The resulting
+nonlinear program jointly optimizes the whole-body trajectory, maneuver
+duration, and event timing while accounting for control smoothness and
+payload clearance. In a multi-waypoint aerial-locomotion benchmark, the
+proposed formulation retains feasibility on the tested coarse grids and
+requires less solve time than fourth-order Runge-Kutta and discrete
+Euler-Lagrange transcriptions in the reported large-scale cases, while
+yielding comparable maneuver durations. Experiments on an aerial
+manipulator with a 3-DoF arm demonstrate a continuous
+pick-transport-place maneuver with onboard contact detection,
+disturbance observation, and admittance filtering.</p></div></div></section>
 
   <section class="section teaser-section"><div class="container"><div class="video-placeholder main-video"><div class="aerial-robot teaser-robot"><i class="rotor left"></i><i class="rotor right"></i><span class="body"></span><span class="arm-link link-one"></span><span class="arm-link link-two"></span><b class="gripper"></b></div><div class="teaser-path"></div><div class="teaser-object"></div><button type="button" aria-label="Demo video placeholder">▶</button><p>Overview video will appear here</p></div></div></section>
 
@@ -48,9 +72,8 @@
   </div></section>
 
   <section class="section bibtex-section" id="bibtex"><div class="container narrow"><h2>BibTeX</h2><pre><code>@article{tong2026dynamic,
-  title   = {Planning for Dynamic Aerial Grasping Based on
-             Discrete Variational Mechanics and
-             Complementarity Constraints},
+  title   = {Manifold-Aware Spatio-Temporal Planning for Aerial Pick-and-Place
+              via a Discrete Right-Trivialized Hamiltonian Dynamics},
   author  = {Tong, Li and others},
   journal = {To appear},
   year    = {2026}
