@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Planning for Dynamic Aerial Grasping — research project page by Li Tong.">
+  <title>Li Tong | Dynamic Aerial Grasping</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+  <section class="publication-hero" id="top">
+    <div class="container title-container">
+      <h1>Planning for <span class="title-blue">Dynamic</span> <span class="title-orange">Aerial Grasping</span> Based on Discrete Variational Mechanics and Complementarity Constraints</h1>
+    </div>
+    <div class="hero-banner" aria-label="Illustration of aerial manipulators following planned trajectories">
+      <div class="banner-skyline"></div><div class="banner-path path-a"></div><div class="banner-path path-b"></div>
+      <div class="aerial-robot robot-one"><i class="rotor left"></i><i class="rotor right"></i><span class="body"></span><span class="arm-link link-one"></span><span class="arm-link link-two"></span><b class="gripper"></b></div>
+      <div class="aerial-robot robot-two"><i class="rotor left"></i><i class="rotor right"></i><span class="body"></span><span class="arm-link link-one"></span><span class="arm-link link-two"></span><b class="gripper"></b></div>
+      <div class="aerial-robot robot-three"><i class="rotor left"></i><i class="rotor right"></i><span class="body"></span><span class="arm-link link-one"></span><span class="arm-link link-two"></span><b class="gripper"></b></div>
+      <div class="aerial-robot robot-four"><i class="rotor left"></i><i class="rotor right"></i><span class="body"></span><span class="arm-link link-one"></span><span class="arm-link link-two"></span><b class="gripper"></b></div>
+      <div class="banner-object object-one">PICK</div><div class="banner-object object-two">PLACE</div>
+      <p>SPATIO-TEMPORAL PLANNING · CONTACT-AWARE MOTION · AERIAL MANIPULATION</p>
+    </div>
+    <div class="container publication-info">
+      <div class="authors"><a href="https://github.com/LiTon88">Li Tong</a><sup>1,2</sup><span class="author-placeholder">Collaborators to be added</span></div>
+      <div class="affiliations"><span><sup>1</sup> Tongji University</span><span><sup>2</sup> Technical University of Munich</span></div>
+      <p class="project-status">Research Project · 2026</p>
+      <div class="resource-links"><span class="resource-button unavailable"><span class="resource-icon">▤</span> Paper</span><a class="resource-button" href="https://github.com/LiTon88/li-tong-research"><span class="resource-icon">⌘</span> Code</a><span class="resource-button unavailable"><span class="resource-icon">▶</span> Video</span></div>
+    </div>
+  </section>
+
+  <section class="section abstract-section" id="abstract"><div class="container narrow"><h2>Abstract</h2><div class="content justified"><p>Dynamic aerial grasping requires simultaneous reasoning about nonlinear flight dynamics, manipulator motion, contact events, and task timing. We formulate these coupled decisions in a unified spatio-temporal trajectory optimization problem. Discrete variational mechanics is employed to preserve the mechanical structure of the aerial manipulator, while relaxed complementarity constraints describe grasp events and task progress in a differentiable form. The resulting planner jointly optimizes system states, control inputs, event progress, and motion duration. The framework is integrated with closed-loop control and experimentally evaluated through pick-and-place operations on a 3-DOF aerial manipulator.</p></div></div></section>
+
+  <section class="section teaser-section"><div class="container"><div class="video-placeholder main-video"><div class="aerial-robot teaser-robot"><i class="rotor left"></i><i class="rotor right"></i><span class="body"></span><span class="arm-link link-one"></span><span class="arm-link link-two"></span><b class="gripper"></b></div><div class="teaser-path"></div><div class="teaser-object"></div><button type="button" aria-label="Demo video placeholder">▶</button><p>Overview video will appear here</p></div></div></section>
+
+  <section class="section method-section" id="method"><div class="container"><h2>Method</h2><div class="method-figure"><div class="method-block model-block"><span>01</span><b>Discrete Variational<br>Dynamics</b><code>R<sub>dyn</sub>(x,u)=0</code></div><div class="method-arrow">→</div><div class="method-block planning-block"><span>02</span><b>Spatio-Temporal<br>Optimization</b><code>Z={x,u,κ,T}</code></div><div class="method-arrow">→</div><div class="method-block event-block"><span>03</span><b>Complementarity<br>Events</b><code>κ<sup>m</sup> · s<sup>m</sup> ≈ 0</code></div></div><div class="content justified method-copy"><p>The framework contains three coupled components. First, a discrete variational model provides structure-preserving system dynamics. Second, the spatio-temporal optimal control problem solves the motion and total duration simultaneously. Third, relaxed complementarity constraints coordinate ordered contact events through continuous progress variables. This unified construction enables feasible and efficient grasping motion to be generated within a finite planning horizon.</p></div></div></section>
+
+  <section class="section experiments-section" id="experiments"><div class="container"><h2>Real Experiments</h2>
+    <div class="experiment-group"><h3>Aerial Locomotion Planning</h3><div class="content justified group-description"><p>Planned spatial trajectories and quadrotor base motion are compared across three numerical methods, together with computation time and estimated motion duration for increasing discretization resolutions.</p></div><div class="media-row three">
+      <div class="media-panel"><div class="media-grid"></div><div class="flight-path"><i></i><i></i><i></i></div><span class="media-label">Spatial trajectories</span><span class="media-hint">Replace with experiment media</span></div>
+      <div class="media-panel"><div class="media-grid"></div><div class="flight-path"><i></i><i></i><i></i></div><span class="media-label">Base motion</span><span class="media-hint">Replace with experiment media</span></div>
+      <div class="media-panel"><div class="media-grid"></div><div class="flight-path"><i></i><i></i><i></i></div><span class="media-label">Computation time</span><span class="media-hint">Replace with experiment media</span></div>
+    </div></div>
+    <div class="experiment-group"><h3>Pick-and-Place Operations</h3><div class="content justified group-description"><p>The planned reference is executed on the aerial manipulator to validate grasp timing, trajectory tracking, and task completion during a complete pick-and-place operation.</p></div><div class="media-row two"><div class="media-panel wide"><div class="media-grid"></div><div class="flight-path"><i></i><i></i><i></i></div><span class="media-label">Planned trajectory</span><span class="media-hint">Replace with experiment media</span></div><div class="media-panel wide"><div class="media-grid"></div><div class="flight-path"><i></i><i></i><i></i></div><span class="media-label">Hardware demonstration</span><span class="media-hint">Replace with experiment media</span></div></div></div>
+    <div class="experiment-group"><h3>Contact Event and Task Progress</h3><div class="content justified group-description"><p>When contact with a task is established, the corresponding binary indicator changes state. The associated progress variable then decreases and returns the indicator to its inactive state.</p></div><div class="progress-figure"><div class="axis y-axis">value</div><div class="axis x-axis">time</div><div class="signal signal-s"><span>s</span></div><div class="signal signal-k"><span>κ</span></div><div class="event-line"><b>contact</b></div></div></div>
+    <div class="experiment-group more-cases"><h3>More Experimental Cases</h3><div class="media-row two"><div class="media-panel wide"><div class="media-grid"></div><span class="media-label">Temporary pick-up</span><span class="media-hint">Replace with experiment media</span></div><div class="media-panel wide"><div class="media-grid"></div><span class="media-label">Placement task</span><span class="media-hint">Replace with experiment media</span></div></div><p class="coming-soon">More videos are coming soon...</p></div>
+  </div></section>
+
+  <section class="section bibtex-section" id="bibtex"><div class="container narrow"><h2>BibTeX</h2><pre><code>@article{tong2026dynamic,
+  title   = {Planning for Dynamic Aerial Grasping Based on
+             Discrete Variational Mechanics and
+             Complementarity Constraints},
+  author  = {Tong, Li and others},
+  journal = {To appear},
+  year    = {2026}
+}</code></pre></div></section>
+</main>
+<footer><div class="container"><p>Research project page by Li Tong. Design inspired by the <a href="https://locomanip-duet.github.io/">RoboDuet project page</a>.</p></div></footer>
+</body>
+</html>
